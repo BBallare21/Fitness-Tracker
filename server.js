@@ -11,11 +11,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
-
-
-
-mongoose.connect("mongodb://workoutdb:password2@ds141228.mlab.com:41228/heroku_2cw7540x", {
-  useMongoClient: true,
+// "mongodb://workoutdb:password2@ds141228.mlab.com:41228/heroku_2cw7540x"
+mongoose.connect("mongodb://localhost/workout", {
+  // useMongoClient: true,
+  useUnifiedTopology: true,
   useNewUrlParser: true,
   useFindAndModify: false
 });
