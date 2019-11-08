@@ -1,7 +1,6 @@
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://<dbuser>:<dbpassword>@ds141228.mlab.com:41228/heroku_2cw7540x";
 const PORT = 3000;
 
 const app = express();
@@ -15,7 +14,7 @@ app.use(express.static("public"));
 
 
 
-mongoose.connect(MONGODB_URI, {
+mongoose.connect("mongodb://workoutdb:password2@ds141228.mlab.com:41228/heroku_2cw7540x", {
   useMongoClient: true,
   useNewUrlParser: true,
   useFindAndModify: false
